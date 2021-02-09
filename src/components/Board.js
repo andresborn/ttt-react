@@ -4,9 +4,9 @@ import Square from "./Square.js";
 export class Board extends Component {
   constructor(props) {
     super(props);
-    this.handleName1 = this.handleName1.bind(this);
-    this.handleName2 = this.handleName2.bind(this);
-    this.restart = this.restart.bind(this);
+    this.handleName1 = this.handleName1.bind(this);  // Bind our methods to our scope
+    this.handleName2 = this.handleName2.bind(this);  // so, when calling `this`, we refer to
+    this.restart = this.restart.bind(this);          // this state
     this.state = {
       squares: [null, null, null, null, null, null, null, null, null],
       xIsNext: true,
@@ -17,10 +17,10 @@ export class Board extends Component {
 
   handleClick(i) {
     if (this.state.squares[i] || checkWinner(this.state.squares)) {
-      return;
+      return;  // if square is filled or there's a winner, don't do anything
     } else {
-      const squares = this.state.squares.slice();
-      squares[i] = this.state.xIsNext ? "X" : "O";
+      const squares = this.state.squares.slice(); // create new squares to then assign to state good practice for "time traveling"
+      squares[i] = this.state.xIsNext ? "X" : "O"; // Assign to square the X or O, depending on who's turn it is
 
       this.setState({
         squares: squares,
@@ -47,14 +47,14 @@ export class Board extends Component {
     if (winner) {
       status =
         winner === "X"
-          ? `The winner is ${this.state.name1}`
+          ? `The winner is ${this.state.name1}` // render player names
           : `The winner is ${this.state.name2}`;
     } else {
         if(this.state.name1 === "" || this.state.name2 === "") {
             // if empty don't render names
         } else {
             status = this.state.xIsNext
-        ? `It is ${this.state.name1}'s turn`
+        ? `It is ${this.state.name1}'s turn` // conditionally render who's turn it is
         : `It is ${this.state.name2}'s turn`;
         }
     }
