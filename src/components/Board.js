@@ -6,7 +6,7 @@ export class Board extends Component {
     super(props);
     this.handleName1 = this.handleName1.bind(this);
     this.handleName2 = this.handleName2.bind(this);
-    // this.restart = this.restart.bind(this);
+    this.restart = this.restart.bind(this);
     this.state = {
       squares: [null, null, null, null, null, null, null, null, null],
       xIsNext: true,
@@ -15,35 +15,8 @@ export class Board extends Component {
     };
   }
 
-  checkWinner(squares) {
-    let winningConditions;
-    winningConditions = [
-      [0, 1, 2], // top horizontal
-      [3, 4, 5], // mid horizontal
-      [6, 7, 8], // bottom horizontal
-      [0, 3, 6], // left vertical
-      [1, 4, 7], // center vertical
-      [2, 5, 8], // right vertical
-      [0, 4, 8], // top left to bottom right diagonal
-      [2, 4, 6], // top right to bottom left diagonal
-    ];
-
-    for (let i = 0; i < winningConditions.length; i++) {
-      const [a, b, c] = winningConditions[i];
-      if (
-        squares[a] &&
-        squares[a] === squares[b] &&
-        squares[a] === squares[c]
-      ) {
-        return squares[a];
-      } else {
-        return null;
-      }
-    }
-  }
-
   handleClick(i) {
-    if (this.state.squares[i] || this.checkWinner(this.state.squares)) {
+    if (this.state.squares[i] || checkWinner(this.state.squares)) {
       return;
     } else {
       const squares = this.state.squares.slice();
@@ -63,13 +36,13 @@ export class Board extends Component {
     this.setState({ name2: e.target.value });
   }
 
-  // restart() {
-  //   this.setState({squares: [null, null, null, null, null, null, null, null, null],
-  //     xIsNext: true,})
-  // }
+  restart() {
+    this.setState({squares: [null, null, null, null, null, null, null, null, null],
+      xIsNext: true,})
+  }
 
   render() {
-    let winner = this.checkWinner(this.state.squares);
+    let winner = checkWinner(this.state.squares);
     let status;
     if (winner) {
       status =
@@ -107,7 +80,7 @@ export class Board extends Component {
             />
           </div>
         </div>
-        {/* <button className="reset" onClick={this.restart}>Play again</button> */}
+        <button className="reset" onClick={this.restart}>Play again</button>
         <div className="row">
           <Square
             value={this.state.squares[0]}
@@ -156,3 +129,28 @@ export class Board extends Component {
 }
 
 export default Board;
+
+
+const checkWinner = (squares) => {
+  const winningConditions = [
+    [0, 1, 2], // top horizontal
+    [3, 4, 5], // mid horizontal
+    [6, 7, 8], // bottom horizontal
+    [0, 3, 6], // left vertical
+    [1, 4, 7], // center vertical
+    [2, 5, 8], // right vertical
+    [0, 4, 8], // top left to bottom right diagonal
+    [2, 4, 6], // top right to bottom left diagonal
+  ];
+  for (let i = 0; i < winningConditions.length; i++) {
+    const [a, b, c] = winningConditions[i];
+    if (
+      squares[a] &&
+      squares[a] === squares[b] &&
+      squares[a] === squares[c]
+    ) {
+      return squares[a];
+    } 
+  }
+  return null;
+}
