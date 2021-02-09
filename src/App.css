@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: azure;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  height: 8vh;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 36vw;
+  justify-content: center;
+  align-content: center;
+}
+
+.square {
+  width: 12vw;
+  height: 12vw;
+  background-color: aquamarine;
+  border: 1px solid white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 8vw;
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.names-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  margin: 1vw;
+  width: 15vw;
+}
+
+.reset {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.display {
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 650px) {
+  .square {
+    width: 25vw;
+    height: 25vw;
+    font-size: 18vw;
+    background-color: aquamarine;
+  }
+  .name {
+    width: 30vw;
+  }
+}
