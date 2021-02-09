@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ttt-react/static/css/main.3497b18e.chunk.css",
+    "main.js": "/ttt-react/static/js/main.fac8bd3c.chunk.js",
+    "main.js.map": "/ttt-react/static/js/main.fac8bd3c.chunk.js.map",
+    "runtime-main.js": "/ttt-react/static/js/runtime-main.8ee1fc25.js",
+    "runtime-main.js.map": "/ttt-react/static/js/runtime-main.8ee1fc25.js.map",
+    "static/js/2.1ce2867a.chunk.js": "/ttt-react/static/js/2.1ce2867a.chunk.js",
+    "static/js/2.1ce2867a.chunk.js.map": "/ttt-react/static/js/2.1ce2867a.chunk.js.map",
+    "static/js/3.a1e1e02b.chunk.js": "/ttt-react/static/js/3.a1e1e02b.chunk.js",
+    "static/js/3.a1e1e02b.chunk.js.map": "/ttt-react/static/js/3.a1e1e02b.chunk.js.map",
+    "index.html": "/ttt-react/index.html",
+    "static/css/main.3497b18e.chunk.css.map": "/ttt-react/static/css/main.3497b18e.chunk.css.map",
+    "static/js/2.1ce2867a.chunk.js.LICENSE.txt": "/ttt-react/static/js/2.1ce2867a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ee1fc25.js",
+    "static/js/2.1ce2867a.chunk.js",
+    "static/css/main.3497b18e.chunk.css",
+    "static/js/main.fac8bd3c.chunk.js"
+  ]
+}
