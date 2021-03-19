@@ -10,7 +10,7 @@ The code works like this:
 
 We have individual `<Square />` components to whom we pass, as a prop, the current `state` of the gameboard.
 
-Each `<Square />` also handles a function that changes the `state`, specifically for their position. Inmeadiately after that, because `state` has just changed, our `<Square />` is updated.
+Each `<Square />` also handles a function that changes the `state`, specifically for their position. Immediately after that, because `state` has just changed, our `<Square />` is updated.
 
 Finally, we added some extra features to store our players name's and to conditionally render them regarding who's turn it is to play. We also use these to render the winner.
 
